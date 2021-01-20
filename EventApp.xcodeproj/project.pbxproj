@@ -26,6 +26,9 @@
 		5A5C3DB9A3A45C835DCFDF2E /* Pods_EventAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429C42F004343A3FCC38651F /* Pods_EventAppTests.framework */; };
 		8FA852A02BEDB1FE4B2C7A88 /* Pods_EventApp_EventAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB00760ED3EF6F4221FAC5BC /* Pods_EventApp_EventAppUITests.framework */; };
 		CD42127325A952EAFA634789 /* Pods_EventApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB854BE336AC00BED3726A64 /* Pods_EventApp.framework */; };
+		D21A97ED25B849F700BCC645 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21A97EC25B849F700BCC645 /* AddEventViewController.swift */; };
+		D21A97F225B84BF200BCC645 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21A97F125B84BF200BCC645 /* UIViewController+Extensions.swift */; };
+		D21A97F725B84F2300BCC645 /* addEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21A97F625B84F2300BCC645 /* addEventViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		BB00760ED3EF6F4221FAC5BC /* Pods_EventApp_EventAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventApp_EventAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C008A842F3407B5FDFC00DF6 /* Pods-EventApp-EventAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp-EventAppUITests.release.xcconfig"; path = "Target Support Files/Pods-EventApp-EventAppUITests/Pods-EventApp-EventAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CB854BE336AC00BED3726A64 /* Pods_EventApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D21A97EC25B849F700BCC645 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		D21A97F125B84BF200BCC645 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		D21A97F625B84F2300BCC645 /* addEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addEventViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,18 +146,17 @@
 		185817E925A9B4160093506E /* EventApp */ = {
 			isa = PBXGroup;
 			children = (
+				D24BC04B25B83E89000E0EF8 /* UI */,
+				D24BC04A25B83E73000E0EF8 /* CoreDataManager */,
+				D24BC04925B83E5E000E0EF8 /* ViewModel */,
 				1858183925A9D9210093506E /* Controllers */,
 				1858183825A9D90A0093506E /* Coordinators */,
 				1858183225A9D6A40093506E /* Utils */,
 				185817EA25A9B4160093506E /* AppDelegate.swift */,
 				185817EC25A9B4160093506E /* SceneDelegate.swift */,
-				185817F025A9B4160093506E /* Main.storyboard */,
 				185817F325A9B4170093506E /* Assets.xcassets */,
-				185817F525A9B4170093506E /* LaunchScreen.storyboard */,
 				185817F825A9B4170093506E /* Info.plist */,
 				1858183A25A9D9520093506E /* EventApp.xcdatamodeld */,
-				1858184025A9DD220093506E /* CoreDataManager.swift */,
-				18053BC525A9E45E009E2604 /* eventListViewModel.swift */,
 			);
 			path = EventApp;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				1858183325A9D6CB0093506E /* UIColor+Extensions.swift */,
+				D21A97F125B84BF200BCC645 /* UIViewController+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 			children = (
 				185817EE25A9B4160093506E /* ViewController.swift */,
 				1858182A25A9BD5B0093506E /* eventListViewController.swift */,
+				D21A97EC25B849F700BCC645 /* AddEventViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,8 +234,41 @@
 				80F42B13F3D2F999CA86B8E2 /* Pods-EventAppTests.debug.xcconfig */,
 				6C811DE38C702F7EA49379E6 /* Pods-EventAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D24BC04925B83E5E000E0EF8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18053BC525A9E45E009E2604 /* eventListViewModel.swift */,
+				D21A97F625B84F2300BCC645 /* addEventViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D24BC04A25B83E73000E0EF8 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				1858184025A9DD220093506E /* CoreDataManager.swift */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		D24BC04B25B83E89000E0EF8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D24BC04C25B83E96000E0EF8 /* View */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D24BC04C25B83E96000E0EF8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				185817F525A9B4170093506E /* LaunchScreen.storyboard */,
+				185817F025A9B4160093506E /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DCA830FF9961407B093FD7B4 /* Frameworks */ = {
@@ -444,12 +484,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1858183C25A9D9520093506E /* EventApp.xcdatamodeld in Sources */,
+				D21A97ED25B849F700BCC645 /* AddEventViewController.swift in Sources */,
+				D21A97F225B84BF200BCC645 /* UIViewController+Extensions.swift in Sources */,
 				1858181F25A9B8F90093506E /* AppCoordinator.swift in Sources */,
 				1858182B25A9BD5B0093506E /* eventListViewController.swift in Sources */,
 				185817EF25A9B4160093506E /* ViewController.swift in Sources */,
 				185817EB25A9B4160093506E /* AppDelegate.swift in Sources */,
 				18053BC625A9E45E009E2604 /* eventListViewModel.swift in Sources */,
 				1858183425A9D6CB0093506E /* UIColor+Extensions.swift in Sources */,
+				D21A97F725B84F2300BCC645 /* addEventViewModel.swift in Sources */,
 				1858184125A9DD220093506E /* CoreDataManager.swift in Sources */,
 				185817ED25A9B4160093506E /* SceneDelegate.swift in Sources */,
 				18053BCC25A9E5E3009E2604 /* AddEventCoordinator.swift in Sources */,

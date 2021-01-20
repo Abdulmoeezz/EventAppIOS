@@ -8,9 +8,10 @@
 import Foundation
 import UIKit
 
+
 final class EventListCoordinator:Coordinator {
     
-    var childCoordinators: [Coordinator] = []
+    private(set) var childCoordinators: [Coordinator] = []
     private var navigationController:UINavigationController
     
     init(navigationController:UINavigationController) {
@@ -19,8 +20,9 @@ final class EventListCoordinator:Coordinator {
     
     
     func start() {
-        let meventlistViewController = eventListViewController.instantiate()
-        let viewmodel = eventListViewModel()
+        let meventlistViewController:eventListViewController = .instantiate()
+        let eventList = eventListViewModel()
+        let viewmodel = eventList
         viewmodel.coordinator = self
         meventlistViewController.veiwModel = viewmodel
         navigationController.setViewControllers([meventlistViewController], animated: false)
@@ -34,6 +36,8 @@ final class EventListCoordinator:Coordinator {
         addEventCoordinator.start()
         }
     
-    
+    func childDidFinish(){
+        
+    }
     
 }
