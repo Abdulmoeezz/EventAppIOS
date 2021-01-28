@@ -26,14 +26,20 @@ final class AddEventCoordinator : Coordinator {
         
         let addEventViewController:AddEventViewController = .instantiate()
         let viewModel = addEventViewModel()
+        viewModel.coordinator = self
         addEventViewController.viewModel = viewModel
+        
         navigationController.present(addEventViewController, animated: true, completion: nil)
         
     }
     
     func didFinishAddEvent(){
-        parentCoordinator?.childDidFinish()
-        
+        parentCoordinator?.childDidFinish( self)
+        }
+    
+    deinit {
+        print(" deinit from event coordinators.")
+
     }
     
     
